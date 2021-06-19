@@ -1,4 +1,10 @@
 
+
+//Liars Dice
+// A Quick and Easy-ish Liars Dice game based off of my code for Kingmaker. 
+//Colors are used instead of pip numbers. I suggest Red being equal to 1, and Magenta being equal to 6. Employ a Roy G Biv style mnemonic if needed. 
+// https://en.wikipedia.org/wiki/Liar%27s_dice
+
 byte currentColor = 0;
 byte GemColorRandomizer1 = 0;
 byte GemColorRandomizer2 = 0;
@@ -32,7 +38,7 @@ void loop() {
   setColorOnFace(OFF, 5);
   }
 
-  // A Single Click to "hide" the dice under your cup, in case real life calls you away from the game.
+  // A Single Click to "hide" the dice under your cup, in case real life calls you away from the game. Long Press to return to your current "hand" of dice. 
 
  if (buttonLongPressed()) {
   
@@ -77,7 +83,7 @@ if (DiceOnHand == 2) {
   }
 
   if (DiceOnHand == 5) {
-  setColorOnFace (dim (CYAN, 255), 0);
+  setColorOnFace (dim (CYAN, 255), 0); // Adding Cyan at 0 to "spoil" the dice roll, and remind player to re-roll all five dice, as they no longer have any dice on hand.
   setColorOnFace(dim (WHITE, 50), 1);
   setColorOnFace(dim (WHITE, 50), 2);
   setColorOnFace(dim (WHITE, 50), 3);
@@ -104,5 +110,5 @@ if (buttonMultiClicked())
   GemColorRandomizer4 =  random(5);
   GemColorRandomizer5 =  random(5);
 }
-// code to re-roll the dice
+// A Triple click re-rolls your dice.
 }
